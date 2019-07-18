@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using QuantChallenge.Persistence.UserDataProvider;
 
 namespace QuantChallenge.Persistence.Retriever

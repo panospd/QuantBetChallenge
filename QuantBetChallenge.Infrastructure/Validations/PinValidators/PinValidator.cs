@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using QuantBetChallenge.Core;
 using ValidationResult = QuantBetChallenge.Core.Validation.ValidationResult;
 
 namespace QuantBetChallenge.Infrastructure.Validations.PinValidators

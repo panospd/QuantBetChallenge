@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using QuantBetChallenge.Core.Validation;
+﻿using System.Collections.Generic;
 
 namespace QuantBetChallenge.Core
 {

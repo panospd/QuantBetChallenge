@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using QuantBetChallenge.Core;
 using QuantBetChallenge.Core.Validation;
-using QuantBetChallenge.Infrastructure.Helpers;
 
 namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
 {

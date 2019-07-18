@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace QuantBetChallenge.Core
+﻿namespace QuantBetChallenge.Core
 {
     public class BankAccountDetails : IBankAccountDetails
     {

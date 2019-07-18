@@ -14,7 +14,7 @@ namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
             if (pinForValidationDto == null)
                 throw new Exception("Object for validation is null");
 
-            int[] pinDigits = pinForValidationDto.Pin.Select(ch => ch - '0').ToArray();
+            int[] pinDigits = StringDigitsToIntArrayConverter.GetDigits(pinForValidationDto.Pin);
 
             if (PinIsFourConsecutiveZeros(pinDigits))
                 return new ValidationResult(false, "Pin cannot be 0000.");

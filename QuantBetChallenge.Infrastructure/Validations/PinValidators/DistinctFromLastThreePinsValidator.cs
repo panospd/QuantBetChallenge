@@ -1,7 +1,5 @@
 ﻿using System;
-using QuantBetChallenge.Core;
 using QuantBetChallenge.Core.Validation;
-using static System.Int32;
 
 namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
 {

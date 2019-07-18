@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using QuantBetChallenge.Core;
-using QuantBetChallenge.Infrastructure;
 using QuantBetChallenge.Infrastructure.PinGenerator;
-using QuantBetChallenge.Infrastructure.Validations.PinValidators;
 using QuantChallenge.Persistence.UserDataProvider;
 
 namespace QuantBetChallenge

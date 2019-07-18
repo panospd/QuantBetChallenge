@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace QuantBetChallenge.Infrastructure.Helpers
 {
-    public static class IntegerToIntArrayConverter
+    public static class StringDigitsToIntArrayConverter
     {
         public static int[] GetDigits(string number)
         {

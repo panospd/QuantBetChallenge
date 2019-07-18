@@ -1,5 +1,4 @@
 ﻿using System;
-using QuantBetChallenge.Core;
 using QuantBetChallenge.Core.Validation;
 
 namespace QuantBetChallenge.Infrastructure.Validations.PinValidators

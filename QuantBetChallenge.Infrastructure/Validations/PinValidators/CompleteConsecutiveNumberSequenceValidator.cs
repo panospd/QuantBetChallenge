@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using QuantBetChallenge.Infrastructure.Helpers;
 using ValidationResult = QuantBetChallenge.Core.Validation.ValidationResult;
@@ -8,10 +7,6 @@ namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
 {
     public class CompleteConsecutiveNumberSequenceValidator : PinValidator, IValidator
     {
-        public CompleteConsecutiveNumberSequenceValidator()
-        {
-        }
-
         public override ValidationResult Validate()
         {
             IPinForValidationDto pinForValidationDto = ValidationContext.ObjectInstance as IPinForValidationDto;
@@ -19,7 +14,7 @@ namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
             if (pinForValidationDto == null)
                 throw new Exception("Object for validation is null");
 
-            int[] pinDigits = pinForValidationDto.Pin.Select(ch => ch - '0').ToArray();
+            int[] pinDigits = StringDigitsToIntArrayConverter.GetDigits(pinForValidationDto.Pin);
 
             if (IsCompleteConsecutiveNumberSequence(pinDigits))
             {
