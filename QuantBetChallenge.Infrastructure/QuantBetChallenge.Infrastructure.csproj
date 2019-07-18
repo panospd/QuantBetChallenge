@@ -1,13 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\QuantBetChallenge.Core\QuantBetChallenge.Core.csproj" />
-    <ProjectReference Include="..\QuantBetChallenge.Infrastructure\QuantBetChallenge.Infrastructure.csproj" />
+    <ProjectReference Include="..\QuantChallenge.Persistence\QuantChallenge.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

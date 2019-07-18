@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantBetChallenge", "QuantBetChallenge\QuantBetChallenge.csproj", "{34582BF2-C5C6-4423-A74D-759748C9214A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuantBetChallenge", "QuantBetChallenge\QuantBetChallenge.csproj", "{34582BF2-C5C6-4423-A74D-759748C9214A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantBetChallenge.Core", "QuantBetChallenge.Core\QuantBetChallenge.Core.csproj", "{7CF511CC-1F76-48C6-9017-7D28456F679F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantChallenge.Persistence", "QuantChallenge.Persistence\QuantChallenge.Persistence.csproj", "{B638E725-AE56-4080-9624-F28273F83A6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantBetChallenge.Infrastructure", "QuantBetChallenge.Infrastructure\QuantBetChallenge.Infrastructure.csproj", "{C2831E90-D7BE-46F7-8E1A-715A475ADD68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{34582BF2-C5C6-4423-A74D-759748C9214A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34582BF2-C5C6-4423-A74D-759748C9214A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34582BF2-C5C6-4423-A74D-759748C9214A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF511CC-1F76-48C6-9017-7D28456F679F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF511CC-1F76-48C6-9017-7D28456F679F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF511CC-1F76-48C6-9017-7D28456F679F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF511CC-1F76-48C6-9017-7D28456F679F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B638E725-AE56-4080-9624-F28273F83A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B638E725-AE56-4080-9624-F28273F83A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B638E725-AE56-4080-9624-F28273F83A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B638E725-AE56-4080-9624-F28273F83A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2831E90-D7BE-46F7-8E1A-715A475ADD68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2831E90-D7BE-46F7-8E1A-715A475ADD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2831E90-D7BE-46F7-8E1A-715A475ADD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2831E90-D7BE-46F7-8E1A-715A475ADD68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

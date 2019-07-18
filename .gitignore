@@ -2,3 +2,9 @@ QuantBetChallenge/obj/
 QuantBetChallenge/bin/
 .vs/
 QuantBetChallenge.sln.DotSettings.user
+QuantBetChallenge.Core/obj/
+QuantBetChallenge.Infrastructure/obj/
+QuantBetChallenge.Infrastructure/bin/
+QuantChallenge.Persistence/obj/
+QuantChallenge.Persistence/bin/
+QuantBetChallenge.Core/bin/
