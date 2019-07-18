@@ -30,6 +30,7 @@ namespace QuantBetChallenge.Infrastructure.PinGenerator
         public StandardResponse<string> GeneratePin(ICustomerDetails customerDetails)
         {
             string pin = GenerateRandomPin();
+
             IList<string> pastPins = _customerPinRetriever.GetPinsForValidation((UserIdEnum) customerDetails.Id);
 
             PinForValidationDto pinForValidationDto = new PinForValidationDto(pin, pastPins, customerDetails.BankAccountDetails.BankAccount, customerDetails.BankAccountDetails.SortCode);

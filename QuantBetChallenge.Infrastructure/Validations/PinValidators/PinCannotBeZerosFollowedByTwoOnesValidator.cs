@@ -5,7 +5,7 @@ using QuantBetChallenge.Infrastructure.Helpers;
 
 namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
 {
-    public class PinCannotBeFourConsecutiveZerosValidator : PinValidator, IValidator
+    public class PinCannotBeZerosFollowedByTwoOnesValidator : PinValidator, IValidator
     {
         public override ValidationResult Validate()
         {
@@ -16,23 +16,19 @@ namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
 
             int[] pinDigits = StringDigitsToIntArrayConverter.GetDigits(pinForValidationDto.Pin);
 
-            if (PinIsFourConsecutiveZeros(pinDigits))
-                return new ValidationResult(false, "Pin cannot be 0000.");
+            if (PinIs0011(pinDigits))
+                return new ValidationResult(false, "Pin cannot be 0011.");
 
             return new ValidationResult(true, null);
         }
 
-        private bool PinIsFourConsecutiveZeros(int[] pinDigits)
+        private bool PinIs0011(int[] pinDigits)
         {
-            bool allDigitsAreZeros = true;
-
-            foreach (int pinDigit in pinDigits)
-            {
-                if (pinDigit != 0)
-                    allDigitsAreZeros = false;
-            }
-
-            return allDigitsAreZeros;
+           return 
+                  pinDigits[0] == 0 
+                   && pinDigits[1] == 0
+                   && pinDigits[2] == 1
+                   && pinDigits[3] == 1;
         }
     }
 }
