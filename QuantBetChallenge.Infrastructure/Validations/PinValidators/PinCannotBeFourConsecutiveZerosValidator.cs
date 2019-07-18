@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using QuantBetChallenge.Core;
 using QuantBetChallenge.Core.Validation;
 using QuantBetChallenge.Infrastructure.Helpers;
 
 namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
 {
-    public class ConsecutiveNumberValidator : PinValidator, IValidator
+    public class PinCannotBeFourConsecutiveZerosValidator : PinValidator, IValidator
     {
         public override ValidationResult Validate()
         {
@@ -18,21 +16,23 @@ namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
 
             int[] pinDigits = pinForValidationDto.Pin.Select(ch => ch - '0').ToArray();
 
-            if (MoreThanTwoConsecutive(pinDigits))
-                return new ValidationResult(false, "Pin contains more than two consecutive numbers.");
+            if (PinIsFourConsecutiveZeros(pinDigits))
+                return new ValidationResult(false, "Pin cannot be 0000.");
 
             return new ValidationResult(true, null);
         }
 
-        private bool MoreThanTwoConsecutive(int[] digits)
+        private bool PinIsFourConsecutiveZeros(int[] pinDigits)
         {
-            if (digits[0] == digits[1] && digits[0] == digits[2])
-                return true;
+            bool allDigitsAreZeros = true;
 
-            if (digits[1] == digits[2] && digits[1] == digits[3])
-                return true;
+            foreach (int pinDigit in pinDigits)
+            {
+                if (pinDigit != 0)
+                    allDigitsAreZeros = false;
+            }
 
-            return false;
+            return allDigitsAreZeros;
         }
     }
 }

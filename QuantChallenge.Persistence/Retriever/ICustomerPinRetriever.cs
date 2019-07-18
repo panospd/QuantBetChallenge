@@ -5,6 +5,6 @@ namespace QuantChallenge.Persistence.Retriever
 {
     public interface ICustomerPinRetriever
     {
-        IList<int> GetPinsForValidation(UserIdEnum userId);
+        IList<string> GetPinsForValidation(UserIdEnum userId);
     }
 }

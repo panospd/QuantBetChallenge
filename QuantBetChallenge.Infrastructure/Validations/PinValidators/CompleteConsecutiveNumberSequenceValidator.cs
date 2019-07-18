@@ -19,7 +19,7 @@ namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
             if (pinForValidationDto == null)
                 throw new Exception("Object for validation is null");
 
-            int[] pinDigits = IntegerToIntArrayConverter.GetDigits(pinForValidationDto.Pin);
+            int[] pinDigits = pinForValidationDto.Pin.Select(ch => ch - '0').ToArray();
 
             if (IsCompleteConsecutiveNumberSequence(pinDigits))
             {

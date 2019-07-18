@@ -7,7 +7,7 @@ namespace QuantChallenge.Persistence.Retriever
 {
     public class CustomerPinRetriever : ICustomerPinRetriever
     {
-        public IList<int> GetPinsForValidation(UserIdEnum userId)
+        public IList<string> GetPinsForValidation(UserIdEnum userId)
         {
             if (userId == UserIdEnum.Jack)
                 return CustomerPinsProvider.JackPins.Pins;
@@ -15,7 +15,7 @@ namespace QuantChallenge.Persistence.Retriever
             if (userId == UserIdEnum.Jane)
                 return CustomerPinsProvider.JanePins.Pins;
 
-            return new List<int>();
+            return new List<string>();
         }
     }
 }

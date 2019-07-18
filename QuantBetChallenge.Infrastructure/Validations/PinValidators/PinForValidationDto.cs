@@ -4,7 +4,7 @@ namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
 {
     public class PinForValidationDto : IPinForValidationDto
     {
-        public PinForValidationDto(int pin, IList<int> pastPins, string bankAccount, string sortCode)
+        public PinForValidationDto(string pin, IList<string> pastPins, string bankAccount, string sortCode)
         {
             Pin = pin;
             PastPins = pastPins;
@@ -12,8 +12,8 @@ namespace QuantBetChallenge.Infrastructure.Validations.PinValidators
             SortCode = sortCode;
         }
 
-        public int Pin { get; }
-        public IList<int> PastPins { get; }
+        public string Pin { get; }
+        public IList<string> PastPins { get; }
         public string BankAccount { get; }
         public string SortCode { get; }
     }

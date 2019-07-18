@@ -5,6 +5,6 @@ namespace QuantBetChallenge.Core
     public interface ICustomerPins
     {
         int UserId { get; }
-        IList<int> Pins { get; }
+        IList<string> Pins { get; }
     }
 }

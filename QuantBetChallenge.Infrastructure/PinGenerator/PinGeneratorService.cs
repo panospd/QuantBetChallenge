@@ -27,10 +27,10 @@ namespace QuantBetChallenge.Infrastructure.PinGenerator
             _pinValidationsRunner = pinValidationsRunner;
         }
 
-        public StandardResponse<int?> GeneratePin(ICustomerDetails customerDetails)
+        public StandardResponse<string> GeneratePin(ICustomerDetails customerDetails)
         {
-            int pin = GenerateRandomPin();
-            IList<int> pastPins = _customerPinRetriever.GetPinsForValidation((UserIdEnum) customerDetails.Id);
+            string pin = GenerateRandomPin();
+            IList<string> pastPins = _customerPinRetriever.GetPinsForValidation((UserIdEnum) customerDetails.Id);
 
             PinForValidationDto pinForValidationDto = new PinForValidationDto(pin, pastPins, customerDetails.BankAccountDetails.BankAccount, customerDetails.BankAccountDetails.SortCode);
             _pinValidationsRunner.ValidationContext = new ValidationContext(pinForValidationDto);
@@ -40,17 +40,15 @@ namespace QuantBetChallenge.Infrastructure.PinGenerator
             bool validationsfailed = validationResults.Any(v => !v.Success);
 
             if(validationsfailed)
-                return new StandardResponse<int?>(false, null, validationResults.Where(v => !v.Success).Select(v => v.Message).ToList());
+                return new StandardResponse<string>(false, null, validationResults.Where(v => !v.Success).Select(v => v.Message).ToList());
 
-            return new StandardResponse<int?>(true, pin, null);
+            return new StandardResponse<string>(true, pin, null);
         }
 
-        private int GenerateRandomPin()
+        private string GenerateRandomPin()
         {
-            int _min = 1000;
-            int _max = 9999;
             Random _rdm = new Random();
-            return _rdm.Next(_min, _max);
+            return _rdm.Next(0, 9999).ToString("D4");
         }
     }
 }

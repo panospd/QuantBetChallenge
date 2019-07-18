@@ -7,9 +7,9 @@ namespace QuantBetChallenge.Infrastructure.Helpers
 {
     public static class IntegerToIntArrayConverter
     {
-        public static int[] GetDigits(int number)
+        public static int[] GetDigits(string number)
         {
-            return Array.ConvertAll(number.ToString().ToArray(), x => (int)x - 48);
+            return number.Select(ch => ch - '0').ToArray();
         }
     }
 }

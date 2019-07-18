@@ -17,7 +17,7 @@ namespace QuantBetChallenge
 
             ICustomerDetails jane = CustomerDetailsProvider.Jane;
 
-            StandardResponse<int?> response = pinGenerator.GeneratePin(jane);
+            StandardResponse<string> response = pinGenerator.GeneratePin(jane);
 
             if(response.Success)
                 Console.WriteLine($"Successfully created pin: {response.Result}");
