@@ -14,21 +14,32 @@ namespace QuantBetChallenge
         static void Main(string[] args)
         {
             IPinGeneratorService pinGenerator = new PinGeneratorService();
-
             ICustomerDetails jane = CustomerDetailsProvider.Jane;
 
-            StandardResponse<string> response = pinGenerator.GeneratePin(jane);
 
-            if(response.Success)
-                Console.WriteLine($"Successfully created pin: {response.Result}");
-            else
+            bool pinSuccessfullyCreated = GeneratePinProcessRun(pinGenerator, jane);
+
+            while (!pinSuccessfullyCreated)
             {
-                Console.WriteLine("Pin failed to generate. Please see below for more details");
-                foreach (var errorMessage in response.ErrorMessages)
-                    Console.WriteLine(errorMessage);
+                pinSuccessfullyCreated = GeneratePinProcessRun(pinGenerator, jane);
+            }
+        }
+
+        private static bool GeneratePinProcessRun(IPinGeneratorService pinGenerator, ICustomerDetails customerDetails)
+        {
+            StandardResponse<string> response = pinGenerator.GeneratePin(customerDetails);
+
+            if (response.Success)
+            {
+                Console.WriteLine($"Successfully created pin: {response.Result}");
+                return true;
             }
 
-            
+            Console.WriteLine("Pin failed to generate. Please see below for more details");
+            foreach (var errorMessage in response.ErrorMessages)
+                Console.WriteLine(errorMessage);
+
+            return false;
         }
     }
 }
