@@ -5,6 +5,7 @@ using QuantBetChallenge.Core;
 using QuantBetChallenge.Infrastructure;
 using QuantBetChallenge.Infrastructure.PinGenerator;
 using QuantBetChallenge.Infrastructure.Validations.PinValidators;
+using QuantChallenge.Persistence.UserDataProvider;
 
 namespace QuantBetChallenge
 {
@@ -12,10 +13,11 @@ namespace QuantBetChallenge
     {
         static void Main(string[] args)
         {
-            var pinGenerator = new PinGeneratorService();
+            IPinGeneratorService pinGenerator = new PinGeneratorService();
 
-            StandardResponse<int?> response = pinGenerator.GeneratePin(new CustomerDetails(1, new CustomerPersonalDetails("sa", DateTime.Now),
-                new BankAccountDetails("12-34-67", "12656745")));
+            ICustomerDetails jane = CustomerDetailsProvider.Jane;
+
+            StandardResponse<int?> response = pinGenerator.GeneratePin(jane);
 
             if(response.Success)
                 Console.WriteLine($"Successfully created pin: {response.Result}");
